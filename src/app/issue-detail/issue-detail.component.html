@@ -1,0 +1,11 @@
+<div *ngIf="issue">
+  <h2>{{issue.owner | uppercase}} Details</h2>
+  <div><span>id: </span>{{issue.id}}</div>
+  <div>
+    <label>owner:
+      <input [(ngModel)]="issue.owner" placeholder="owner">
+    </label>
+  </div>
+</div>
+
+<button (click)="goBack()">Back...</button>

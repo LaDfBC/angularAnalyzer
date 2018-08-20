@@ -1,0 +1,8 @@
+<h2>Details...</h2>
+<ul class="issues">
+  <li *ngFor="let issue of issues">
+    <a routerLink="/detail/{{issue.owner}}">
+      <span class="badge">{{issue.id}}</span> {{issue.id | uppercase}}
+    </a>
+  </li>
+</ul>

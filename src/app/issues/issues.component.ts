@@ -10,16 +10,16 @@ import { IssueService } from '../services/issue.service';
 
 export class IssuesComponent implements OnInit {
 
-  issue: Issue = {
-    id: 'MDMS-9512',
-    owner: 'gmausshardt'
-  };
+  // issue: Issue = {
+  //   id: 'MDMS-9512',
+  //   owner: 'gmausshardt'
+  // };
 
   issues: Issue[];
   constructor(private issueService: IssueService) { }
 
   getIssues(): void {
-    this.issueService.getIssues().subscribe(issues => this.issues = issues);
+    this.issueService.getIssues().then(issues => this.issues = issues);
   }
 
   ngOnInit() {

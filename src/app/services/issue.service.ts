@@ -29,4 +29,12 @@ export class IssueService {
   getIssueByTeam(team: string): Promise<Issue> {
     return this.http.get<Issue>(this.issuesUrl).toPromise();
   }
+
+  getIssuesBySprint(sprint: string): Promise<Issue[]> {
+    return this.http.get<Issue[]>(this.issuesUrl + 'sprint').toPromise();
+  }
+
+  getIssuesBySprints(sprints: string[]): Promise<Issue[]> {
+    return this.http.get<Issue[]>(this.issuesUrl + 'sprints').toPromise();
+  }
 }

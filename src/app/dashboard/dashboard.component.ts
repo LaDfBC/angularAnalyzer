@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         scales: {
           yAxes: [{
             ticks: {
-              beginAtZero: true;
+              beginAtZero: true
             }
           }]
         }
@@ -45,11 +45,15 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getIssues();
-
   }
 
   getIssues(): void {
     this.issueService.getIssues()
+      .then(issues => this.issues = issues);
+  }
+
+  getIssuesBySprint(sprint: string): void {
+    this.issueService.getIssuesBySprint(sprint)
       .then(issues => this.issues = issues);
   }
 }
